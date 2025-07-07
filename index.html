@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>يمير للتكوين - YmirInnovation</title>
+
+  <link rel="stylesheet" href="styles/fonts.css">
+
+
+  <link rel="stylesheet" href="assets/aos/aos.css">
+
+  <style>
+    :root {
+      --primary-color: #007acc;
+      --background: linear-gradient(145deg, #e2ecf5, #f9fbfd);
+      --glass-bg: rgba(255, 255, 255, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.2);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Nunito', 'Cairo', sans-serif;
+      background: var(--background);
+      color: #222;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      background: url('images/YM2.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/pexelscodioful.jpg') no-repeat center center/cover;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      backdrop-filter: blur(6px);
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .header-text {
+      position: relative;
+      color: white;
+      text-align: center;
+      z-index: 2;
+      background: var(--glass-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .header-text p {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0.5rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--primary-color);
+    }
+
+    ul.nav-menu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.nav-menu li {
+      margin: 0 1rem;
+    }
+
+    ul.nav-menu li a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    ul.nav-menu li a:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    section {
+      padding: 5rem 1.5rem;
+      text-align: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-flex {
+      display: block;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .section-flex img {
+      max-width: 320px;
+      width: 100%;
+      margin-top: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s;
+    }
+
+    .section-flex img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    .admin-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: default;
+      z-index: 9999;
+      opacity: 0.7;
+    }
+
+    .admin-btn:hover {
+      background-color: #005f99;
+    }
+
+    .contact-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.4rem;
+      padding: 10px 14px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      z-index: 9999;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact-float:hover {
+      background-color: #005f99;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      ul.nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        border-top: 1px solid #eee;
+      }
+
+      ul.nav-menu.active {
+        display: flex;
+      }
+
+      ul.nav-menu li {
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="overlay"></div>
+    <div class="header-text" data-aos="fade-down">
+      <h1>يمير للتكوين - YmirInnovation</h1>
+      <p>تكوين احترافي حديث يواكب تطورات سوق العمل</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+      <ul class="nav-menu" id="menu">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="#testimonials">ماذا يقول طلابنا؟</a></li>
+        <li><a href="store.html">المتجر</a></li>
+        <li><a href="contact.html">الاتصال بنا</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" data-aos="fade-up" class="section-flex">
+    <h2>الرئيسية</h2>
+    <p>مرحبا بك في منصة يمير للتكوين – حيث نمنحك الأدوات للنجاح المهني والعلمي.</p>
+    <img src="images/picture1.jpg" alt="الرئيسية">
+  </section>
+
+  <section id="about" data-aos="fade-up" class="section-flex">
+    <h2>من نحن</h2>
+    <p>نحن مؤسسة جزائرية تهدف إلى توفير تكوين عصري وفعال، معتمد من طرف الدولة، ويشمل الجانب التطبيقي والنظري.</p>
+    <img src="images/about.jpg" alt="من نحن">
+  </section>
+
+  <section id="services-preview" data-aos="fade-up" class="section-flex">
+    <h2>خدماتنا</h2>
+    <p>نقدّم لك مجموعة متنوعة من التكوينات الاحترافية، يمكنك الاطلاع عليها في صفحتنا الخاصة.</p>
+    <img src="images/picture2.jpg" alt="خدمات">
+  </section>
+
+  <section id="testimonials" data-aos="fade-up" class="section-flex">
+    <h2>ماذا يقول طلابنا؟</h2>
+    <p>يشارك المتدربون تجاربهم الناجحة معنا ويؤكدون على جودة المحتوى والتأطير.</p>
+    <img src="images/picture3.jpg" alt="شهادات">
+  </section>
+
+  <section id="store-preview" data-aos="fade-up" class="section-flex">
+    <h2><a href="store.html" style="color: inherit; text-decoration: none;">المتجر</a></h2>
+    <p>اكتشف منتجاتنا الرقمية من كتب تعليمية ودورات تدريبية بأسعار مناسبة.</p>
+    <img src="images/book1.jpg" alt="متجر">
+  </section>
+
+  <footer>
+    <p>&copy; 2025 YmirInnovation. جميع الحقوق محفوظة.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="Facebook">
+        <img src="icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <a href="contact.html" class="contact-float" title="اتصل بنا">✉</a>
+
+  <button class="admin-btn" onclick="return false;" title="خاص بالإدارة (غير مفعل)">الإدارة</button>
+
+  <script src="assets/aos/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

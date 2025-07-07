@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاتصال بنا - YmirInnovation</title>
+
+  <!-- ✅ Local Fonts and Styles -->
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <style>
+    body {
+      font-family: 'Nunito', 'Cairo', sans-serif;
+      background: linear-gradient(to left, #f0f4ff, #ffffff);
+      margin: 0;
+      direction: rtl;
+    }
+
+    nav {
+      background-color: #004d99;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      background: #004d99;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .contact-container h2 {
+      margin-bottom: 1rem;
+      color: #004d99;
+    }
+
+    .contact-info {
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-info strong {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    form button {
+      background: #004d99;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background: #003366;
+    }
+
+    footer {
+      background: #007acc;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    .contact-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #007acc;
+      color: white;
+      font-size: 1.4rem;
+      padding: 10px 14px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      z-index: 9999;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact-float:hover {
+      background-color: #005f99;
+      transform: translateY(-2px);
+    }
+
+    .admin-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: default;
+      z-index: 9999;
+      opacity: 0.7;
+    }
+
+    .admin-btn:hover {
+      background-color: #005f99;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">🏠 العودة إلى الرئيسية</a>
+      <span>📞 الاتصال بنا</span>
+    </div>
+  </nav>
+
+  <!-- ✅ Header -->
+  <header>
+    <h1>الاتصال بنا</h1>
+    <p>نرحب بتواصلك معنا لأي استفسارات أو ملاحظات</p>
+  </header>
+
+  <!-- ✅ Contact Section -->
+  <div class="contact-container">
+    <h2>معلومات الاتصال</h2>
+    <div class="contact-info">
+      <strong>📍 العنوان:</strong>
+      حي الدوزي - باب الزوار - الجزائر العاصمة
+
+      <strong>📧 البريد الإلكتروني:</strong>
+      takwinetasjili@hotmail.com
+
+      <strong>📞 رقم الهاتف:</strong>
+      +213 770 01 67 09
+    </div>
+  </div>
+
+  <!-- ✅ Footer & Buttons -->
+  <footer>
+    <p>&copy; 2025 YmirInnovation. جميع الحقوق محفوظة.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="Facebook">
+        <img src="icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <a href="contact.html" class="contact-float" title="اتصل بنا">✉</a>
+
+  <button class="admin-btn" onclick="return false;" title="خاص بالإدارة (غير مفعل)">الإدارة</button>
+
+</body>
+</html>
